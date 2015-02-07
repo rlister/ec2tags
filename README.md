@@ -9,6 +9,11 @@ write them as environment variables for consumption by applications.
 
 ## Download
 
+```
+curl -L https://github.com/rlister/ec2tags/releases/download/0.1/ec2tags-linux-amd64-0.1.gz | gunzip > ec2tags
+chmod 755 ec2tags
+```
+
 ## Authentication
 
 It is preferable to authenticate an instance via IAM roles. The
