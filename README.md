@@ -49,3 +49,28 @@ instance metadata.
 
 Tags are uppercased and formatted as environment variables, in the
 form: `FOO=bar`.
+
+## Docker
+
+Comes with a Dockerfile for building a minimalist from-scratch
+image. To build with a static binary:
+
+```
+CGO_ENABLED=0 GOOS=linux go build -a -tags netgo -ldflags '-w' ec2tags.go
+docker build -t rlister/ec2tags .
+```
+
+If you are not on linux architecture you will need a golang built with
+cross-compiler support.
+
+To run:
+
+```
+docker run \
+  -e AWS_ACCESS_KEY_ID \
+  -e AWS_SECRET_ACCESS_KEY \
+  -e AWS_DEFAULT_REGION \
+  rlister/ec2tags [instance-id]
+```
+
+The AWS environment vars are unncessary if using IAM roles.
