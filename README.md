@@ -1,5 +1,13 @@
 # ec2tags
 
+## DEPRECATED
+
+This project is no longer necessary, as tags are now available from instance metadata:
+
+https://aws.amazon.com/about-aws/whats-new/2022/01/instance-tags-amazon-ec2-instance-metadata-service/
+
+## Introduction
+
 Tagging AWS EC2 instances, particularly via autoscaling groups, is a
 great way to convey information about the role and intended behaviour
 of the instance.
